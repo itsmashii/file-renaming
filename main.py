@@ -1,3 +1,4 @@
+#huwag magmahal ng classmate
 import os
 from PyPDF2 import PdfReader
 
