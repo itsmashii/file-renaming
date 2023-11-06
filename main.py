@@ -8,9 +8,9 @@ def extract_filename_from_pdf(pdf_file_path):
             pdf_reader = PdfReader(file)
             if len(pdf_reader.pages) > 0:
                 first_page_text = pdf_reader.pages[0].extract_text()
+                filename = first_page_text.splitlines()[18].strip()
                 # Extract the desired filename from the content (assuming it's in a specific format)
                 # For example, if the filename is the first line of the PDF content:
-                filename = first_page_text.splitlines()[18]
                 return filename
     except Exception as e:
         print(f"Error: {e}")
