@@ -1,4 +1,3 @@
-#huwag magmahal ng classmate
 import os
 from PyPDF2 import PdfReader
 
@@ -8,9 +7,9 @@ def extract_filename_from_pdf(pdf_file_path):
             pdf_reader = PdfReader(file)
             if len(pdf_reader.pages) > 0:
                 first_page_text = pdf_reader.pages[0].extract_text()
-                filename = first_page_text.splitlines()[18].strip()
                 # Extract the desired filename from the content (assuming it's in a specific format)
                 # For example, if the filename is the first line of the PDF content:
+                filename = first_page_text.splitlines()[18].strip()
                 return filename
     except Exception as e:
         print(f"Error: {e}")
@@ -32,8 +31,8 @@ def rename_and_save_pdf(original_pdf_path, renamed_pdf_folder):
 
 # Example usage
 if __name__ == "__main__":
-    original_pdf_folder = "certs/originalpdf"  # Path to the originalpdf folder (relative to the script)
-    renamed_pdf_folder = "certs/renamedpdf"  # Path to the renamedpdf folder (relative to the script)
+    original_pdf_folder = r"C:\Users\Lenovo\Documents\Projects\QMS Certificate\certs\originalpdf"  # Path to the originalpdf folder (relative to the script)
+    renamed_pdf_folder = r"C:\Users\Lenovo\Documents\Projects\QMS Certificate\certs\renamedpdf"  # Path to the renamedpdf folder (relative to the script)
 
     # Iterate through the PDF files in the originalpdf folder
     for filename in os.listdir(original_pdf_folder):
